@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   :root{
-    --navy:#394F43; --navy2:#2f4239; --accent:#637A6E; --ink:#394F43;
+    --navy:#394F43; --navy2:#2f4239; --accent:#637A6E; --ink:#1a1a1a;
     --muted:#7c857f; --line:#dde3df; --card:#EAEEEC; --chip:#fff;
   }
   *{box-sizing:border-box;}
@@ -37,15 +37,15 @@
   /* sidebar */
   .side .photo{width:160px;height:190px;object-fit:cover;border-radius:6px;
        border:1px solid var(--line);display:block;margin:0 auto 14px;}
-  .side .name{text-align:center;font-size:22px;font-weight:700;color:var(--navy);}
+  .side .name{text-align:center;font-size:22px;font-weight:700;color:var(--ink);}
   .side .name-en{text-align:center;color:var(--muted);font-size:14px;margin-top:2px;}
   .side .role{text-align:center;font-size:13px;color:var(--ink);margin:12px 0 22px;
        padding:13px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .side .role b{color:var(--navy);font-weight:700;}
+  .side .role b{color:var(--ink);font-weight:700;}
 
   /* contact blocks */
   .side .cblock{margin-bottom:15px;}
-  .side .cblock .clab{font-size:13.5px;font-weight:700;color:var(--navy);}
+  .side .cblock .clab{font-size:13.5px;font-weight:700;color:var(--ink);}
   .side .cblock .clab i{color:var(--accent);margin-right:7px;}
   .side .cblock .cval{font-size:12.5px;color:var(--ink);position:relative;
        padding-left:18px;margin-top:3px;word-break:break-all;}
@@ -57,7 +57,7 @@
        padding:20px 16px;margin-top:22px;}
   .side .block{margin-bottom:24px;}
   .side .block:last-child{margin-bottom:0;}
-  .side .block h3{margin:0 0 12px;font-size:15px;color:var(--navy);font-weight:700;
+  .side .block h3{margin:0 0 12px;font-size:15px;color:var(--ink);font-weight:700;
        border-left:3px solid var(--navy);padding-left:9px;line-height:1.05;}
   .side .block h3 i{margin-right:7px;color:var(--accent);}
   .side .items{position:relative;}
@@ -76,16 +76,16 @@
   .cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:30px;}
   @media(max-width:560px){.cards{grid-template-columns:1fr;}}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
-  .card h2{margin:0 0 14px;font-size:15px;color:var(--navy);font-weight:700;
+  .card h2{margin:0 0 14px;font-size:15px;color:var(--ink);font-weight:700;
        border-left:4px solid var(--accent);padding-left:9px;}
   .chips .chip{display:inline-block;border:1px solid #ccd6cf;background:var(--chip);
-       border-radius:20px;padding:5px 12px;font-size:12.5px;margin:0 5px 8px 0;color:#34433b;}
+       border-radius:20px;padding:5px 12px;font-size:12.5px;margin:0 5px 8px 0;color:var(--ink);}
   .cloud{line-height:2.1;}
-  .cloud span{margin:0 6px;color:var(--navy);}
-  .cloud .xl{font-size:24px;font-weight:800;color:var(--accent);}
+  .cloud span{margin:0 6px;color:var(--ink);}
+  .cloud .xl{font-size:24px;font-weight:800;color:var(--ink);}
   .cloud .lg{font-size:19px;font-weight:700;}
-  .cloud .md{font-size:15px;font-weight:600;color:#4d5d52;}
-  .cloud .sm{font-size:12.5px;color:#919b93;}
+  .cloud .md{font-size:15px;font-weight:600;color:#2b2b2b;}
+  .cloud .sm{font-size:12.5px;color:#8c8c8c;}
 
   /* section list */
   .sec{margin:30px 0;}
@@ -107,12 +107,12 @@
   .tag-journal{background:#e4eae6;color:#394F43;}
 
   .field{background:var(--card);border-radius:12px;padding:20px 22px;margin-top:30px;}
-  .field h2{margin:0 0 14px;font-size:17px;color:var(--navy);font-weight:700;}
+  .field h2{margin:0 0 14px;font-size:17px;color:var(--ink);font-weight:700;}
   .field .col{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
   @media(max-width:560px){.field .col{grid-template-columns:1fr;}}
   .field .pill{background:var(--navy);color:#fff;text-align:center;border-radius:20px;
        padding:7px 0;font-size:13px;font-weight:600;margin-bottom:8px;}
-  .field .tree{font-size:13px;color:#3a4a40;}
+  .field .tree{font-size:13px;color:var(--ink);}
   .field .tree .l2{padding-left:16px;}
   .field .tree .l3{padding-left:32px;}
 
