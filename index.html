@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hyeonna Choi · DGIST</title>
+<meta name="description" content="Hyeonna Choi — M.S. student at DGIST. Computer Vision & Physical AI.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root{
+    --navy:#1e2a44; --navy2:#26344f; --accent:#2f6fed; --ink:#2a2f3a;
+    --muted:#7a828f; --line:#e7e9ee; --card:#f6f7f9; --chip:#fff;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Inter','Noto Sans KR',sans-serif;color:var(--ink);background:#fff;line-height:1.6;}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  /* top nav */
+  .nav{display:flex;align-items:center;justify-content:space-between;
+       max-width:1080px;margin:0 auto;padding:18px 24px;}
+  .nav .brand{font-weight:800;letter-spacing:.5px;color:var(--navy);font-size:18px;}
+  .nav .brand span{color:var(--accent);}
+  .nav .links a{color:var(--ink);margin-left:24px;font-size:14px;font-weight:500;}
+
+  /* dark banner */
+  .banner{background:var(--navy);color:#fff;}
+  .banner .inner{max-width:1080px;margin:0 auto;padding:26px 24px;}
+  .banner h1{margin:0;font-size:26px;font-weight:600;letter-spacing:.5px;}
+
+  /* layout */
+  .wrap{max-width:1080px;margin:0 auto;padding:34px 24px 60px;
+        display:grid;grid-template-columns:260px 1fr;gap:38px;}
+  @media(max-width:820px){.wrap{grid-template-columns:1fr;}}
+
+  /* sidebar */
+  .side .photo{width:160px;height:190px;object-fit:cover;border-radius:6px;
+       border:1px solid var(--line);display:block;margin:0 auto 14px;}
+  .side .name{text-align:center;font-size:22px;font-weight:700;color:var(--navy);}
+  .side .name-en{text-align:center;color:var(--muted);font-size:14px;margin-top:2px;}
+  .side .role{text-align:center;font-size:13px;color:var(--ink);margin-top:10px;
+       padding-top:12px;border-top:1px solid var(--line);}
+  .side .icons{text-align:center;margin:12px 0;}
+  .side .icons a{display:inline-flex;width:30px;height:30px;border-radius:50%;
+       background:var(--card);color:var(--muted);align-items:center;justify-content:center;
+       margin:0 3px;font-size:13px;}
+  .side .contact{font-size:13px;color:var(--ink);text-align:center;margin-bottom:18px;}
+  .side .contact i{color:var(--accent);margin-right:6px;}
+
+  .side .block{border-left:3px solid var(--navy);padding-left:12px;margin:22px 0;}
+  .side .block h3{margin:0 0 10px;font-size:15px;color:var(--navy);font-weight:700;}
+  .side .block h3 i{margin-right:7px;color:var(--accent);}
+  .side .item{font-size:12.5px;margin-bottom:12px;}
+  .side .item .yr{color:var(--muted);font-size:11.5px;}
+  .side .item .ti{font-weight:600;display:block;margin-top:1px;}
+
+  /* main cards */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:30px;}
+  @media(max-width:560px){.cards{grid-template-columns:1fr;}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .card h2{margin:0 0 14px;font-size:15px;color:var(--navy);font-weight:700;
+       border-left:4px solid var(--accent);padding-left:9px;}
+  .chips .chip{display:inline-block;border:1px solid #d7dbe3;background:var(--chip);
+       border-radius:20px;padding:5px 12px;font-size:12.5px;margin:0 5px 8px 0;color:#3c4456;}
+  .cloud{line-height:2.1;}
+  .cloud span{margin:0 6px;color:var(--navy);}
+  .cloud .xl{font-size:24px;font-weight:800;color:var(--accent);}
+  .cloud .lg{font-size:19px;font-weight:700;}
+  .cloud .md{font-size:15px;font-weight:600;color:#46506a;}
+  .cloud .sm{font-size:12.5px;color:#8a93a6;}
+
+  /* section list */
+  .sec{margin:30px 0;}
+  .sec-h{display:flex;align-items:center;gap:10px;margin-bottom:14px;
+       padding-bottom:10px;border-bottom:1px solid var(--line);}
+  .sec-h i{color:var(--navy);font-size:18px;}
+  .sec-h h2{margin:0;font-size:19px;color:var(--ink);font-weight:700;}
+  .sec-h .count{background:var(--navy);color:#fff;font-size:12px;font-weight:700;
+       width:24px;height:24px;border-radius:50%;display:inline-flex;
+       align-items:center;justify-content:center;}
+  .pub{display:flex;gap:8px;margin-bottom:16px;font-size:14px;}
+  .pub .dot{color:var(--accent);margin-top:7px;font-size:8px;}
+  .pub .t{font-weight:600;}
+  .pub .m{color:var(--muted);font-size:13px;}
+  .pub .tag{display:inline-block;font-size:11px;font-weight:600;border-radius:4px;
+       padding:1px 8px;margin-left:6px;vertical-align:middle;}
+  .tag-patent{background:#efe7ff;color:#7a3ff2;}
+  .tag-poster{background:#e7f0ff;color:#2f6fed;}
+  .tag-journal{background:#eef0f3;color:#5a6373;}
+
+  .field{background:#eaf7f0;border-radius:12px;padding:20px 22px;margin-top:30px;}
+  .field h2{margin:0 0 14px;font-size:17px;color:#1f6b46;font-weight:700;}
+  .field .col{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media(max-width:560px){.field .col{grid-template-columns:1fr;}}
+  .field .pill{background:var(--navy);color:#fff;text-align:center;border-radius:20px;
+       padding:7px 0;font-size:13px;font-weight:600;margin-bottom:8px;}
+  .field .tree{font-size:13px;color:#2a4a39;}
+  .field .tree .l2{padding-left:16px;}
+  .field .tree .l3{padding-left:32px;}
+
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:12px;
+       text-align:center;padding:24px;}
+</style>
+</head>
+<body>
+
+<!-- top nav -->
+<div class="nav">
+  <div class="brand">HYEONNA<span>.</span>CHOI</div>
+  <div class="links">
+    <a href="#publications">Publications</a>
+    <a href="#projects">Projects</a>
+    <a href="mailto:hynaaaai@gmail.com">Contact</a>
+  </div>
+</div>
+
+<!-- dark banner -->
+<div class="banner"><div class="inner"><h1>Researcher Profile</h1></div></div>
+
+<div class="wrap">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="side">
+    <img class="photo" src="assets/profile.jpg"
+         onerror="this.src='https://dummyimage.com/160x190/eef0f3/b8bfca&text=photo';">
+    <div class="name">최현나</div>
+    <div class="name-en">Hyeonna Choi</div>
+    <div class="role">Multimodal Intelligence &amp; Perception Lab<br>
+      <b>M.S. Student</b>, EECS · DGIST</div>
+    <div class="icons">
+      <a href="mailto:hynaaaai@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/hynaaaai" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+    </div>
+    <div class="contact"><i class="fas fa-envelope"></i>hynaaaai@gmail.com</div>
+
+    <div class="block">
+      <h3><i class="fas fa-graduation-cap"></i>Education</h3>
+      <div class="item"><span class="yr">2026 – present</span>
+        <span class="ti">DGIST, M.S. in EECS</span></div>
+      <div class="item"><span class="yr">2022 – 2026</span>
+        <span class="ti">Jeju Nat’l Univ., B.S. in Software (AI)</span>
+        <span class="yr">GPA 4.09 / 4.5</span></div>
+    </div>
+
+    <div class="block">
+      <h3><i class="fas fa-briefcase"></i>Experience</h3>
+      <div class="item"><span class="yr">2025 – present</span>
+        <span class="ti">KIMM, AI Robot Research Institute</span>
+        <span class="yr">Student Researcher · Bio-Mechanical Div.</span></div>
+      <div class="item"><span class="yr">2023 – 2025</span>
+        <span class="ti">XAI Lab, Jeju Nat’l Univ.</span>
+        <span class="yr">Undergraduate Researcher</span></div>
+    </div>
+
+    <div class="block">
+      <h3><i class="fas fa-award"></i>Awards</h3>
+      <div class="item"><span class="ti">Grand Prize</span>
+        <span class="yr">Learning Community Program, JNU · 2025</span></div>
+      <div class="item"><span class="ti">Global Talent Award</span>
+        <span class="yr">JNU · 2024</span></div>
+      <div class="item"><span class="ti">First Prize</span>
+        <span class="yr">Smart AI Software Competition, JNU · 2023</span></div>
+      <div class="item"><span class="ti">Bronze Prize</span>
+        <span class="yr">CDS Big Data Competition · 2023</span></div>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main>
+    <!-- two cards -->
+    <div class="cards">
+      <div class="card chips">
+        <h2>Research Interests</h2>
+        <span class="chip">Computer Vision</span>
+        <span class="chip">Physical AI</span>
+        <span class="chip">Visual Perception</span>
+        <span class="chip">Spatiotemporal Understanding</span>
+        <span class="chip">Multi-View RGB-D</span>
+        <span class="chip">Synthetic Data</span>
+        <span class="chip">3D Reconstruction</span>
+        <span class="chip">Autonomous Lab</span>
+      </div>
+      <div class="card">
+        <h2>Related Keywords</h2>
+        <div class="cloud">
+          <span class="xl">ViT</span>
+          <span class="md">transparent objects</span>
+          <span class="lg">3D&nbsp;CNN</span>
+          <span class="sm">depth estimation</span>
+          <span class="lg">RGB-D</span>
+          <span class="md">LangChain</span>
+          <span class="sm">Blender</span>
+          <span class="md">surgical video</span>
+          <span class="sm">SfM</span>
+          <span class="sm">MASt3R</span>
+          <span class="md">fill-level</span>
+          <span class="sm">temporal modeling</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- publications -->
+    <div class="sec" id="publications">
+      <div class="sec-h"><i class="fas fa-book-open"></i><h2>Publications</h2><span class="count">1</span></div>
+      <div class="pub"><span class="dot"><i class="fas fa-circle"></i></span><div>
+        <span class="t">Automated Preprocessing and Tool Combination Modeling for Surgical Phase Recognition</span>
+        <span class="tag tag-journal">Journal</span><br>
+        <span class="m"><u>Hyeonna Choi</u>, Ahyeon Jo, Jisoo Kim · <i>In preparation</i>, 2026</span>
+      </div></div>
+    </div>
+
+    <!-- conferences -->
+    <div class="sec">
+      <div class="sec-h"><i class="fas fa-chalkboard-user"></i><h2>Conference Presentations</h2><span class="count">2</span></div>
+      <div class="pub"><span class="dot"><i class="fas fa-circle"></i></span><div>
+        <span class="t">A Transformer-Based System for Predicting Surgical Tool Usage Transitions</span>
+        <span class="tag tag-poster">Poster</span><br>
+        <span class="m"><u>Hyeonna Choi</u>, Ahyeon Jo, Jisoo Kim · KSCDE Summer Conference, Yeosu · 2025</span>
+      </div></div>
+      <div class="pub"><span class="dot"><i class="fas fa-circle"></i></span><div>
+        <span class="t">An Automated 3D&nbsp;CNN-Based System for Surgical Tool Change Prediction</span>
+        <span class="tag tag-poster">Poster</span><br>
+        <span class="m"><u>Hyeonna Choi</u>, Ahyeon Jo, Jisoo Kim · KSPE Spring Conference, Jeju · 2025</span>
+      </div></div>
+    </div>
+
+    <!-- patents -->
+    <div class="sec">
+      <div class="sec-h"><i class="fas fa-file-contract"></i><h2>Patents</h2><span class="count">1</span></div>
+      <div class="pub"><span class="dot"><i class="fas fa-circle"></i></span><div>
+        <span class="t">LangChain-Based Structuring and Automated Sequence Generation of Biological Experiment Protocols</span>
+        <span class="tag tag-patent">Patent</span><br>
+        <span class="m"><u>Hyeonna Choi</u>, Seungyu Jeon, Hyunwoo Lim, Jisoo Kim · Filed, 2025</span>
+      </div></div>
+    </div>
+
+    <!-- projects -->
+    <div class="sec" id="projects">
+      <div class="sec-h"><i class="fas fa-cube"></i><h2>Projects</h2><span class="count">2</span></div>
+      <div class="pub"><span class="dot"><i class="fas fa-circle"></i></span><div>
+        <span class="t"><a href="https://hynaaaai.github.io/liquid-fill-level-estimation/">Liquid Fill-Level Estimation for Dual-Transparent Labware</a></span><br>
+        <span class="m">ViT on multi-view RGB-D, trained on a fully synthetic Blender pipeline ·
+          <a href="https://github.com/hynaaaai/liquid-fill-level-estimation">code</a></span>
+      </div></div>
+      <div class="pub"><span class="dot"><i class="fas fa-circle"></i></span><div>
+        <span class="t">Depth-Supervised 3D Reconstruction</span><br>
+        <span class="m">Monocular depth as auxiliary supervision, compared against SfM / MASt3R</span>
+      </div></div>
+    </div>
+
+    <!-- research field -->
+    <div class="field">
+      <h2>Research Field</h2>
+      <div class="col">
+        <div>
+          <div class="pill">National S&amp;T Standard Classification</div>
+          <div class="tree">EE. Information / Communication<br>
+            <div class="l2">↳ Artificial Intelligence</div>
+            <div class="l3">↳ Computer Vision</div></div>
+        </div>
+        <div>
+          <div class="pill">Strategic Technology Area</div>
+          <div class="tree">Advanced Robotics / Manufacturing<br>
+            <div class="l2">↳ Physical AI · Autonomous Systems</div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<footer>© 2026 Hyeonna Choi · DGIST, Daegu · KIMM, Daejeon, South Korea · hynaaaai@gmail.com</footer>
+</body>
+</html>
