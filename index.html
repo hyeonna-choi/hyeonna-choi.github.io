@@ -5,157 +5,164 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hyeonna Choi · DGIST</title>
 <meta name="description" content="Hyeonna Choi — M.S. student at DGIST. Computer Vision & Physical AI.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<meta property="og:title" content="Hyeonna Choi">
+<meta property="og:description" content="M.S. student at DGIST · Computer Vision & Physical AI">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Noto+Serif+KR:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   :root{
-    --navy:#1e2a44; --navy2:#26344f; --accent:#33415c; --ink:#2a2f3a;
-    --muted:#7a828f; --line:#e7e9ee; --card:#f6f7f9; --chip:#fff;
+    --paper:#fbfaf7; --ink:#1f2024; --ink2:#3a3c42; --muted:#83837d;
+    --line:#e7e4dc; --line2:#ddd9cf; --accent:#3a4256; --card:#f5f3ee;
+    --serif:'Fraunces','Noto Serif KR',Georgia,serif;
+    --sans:'Inter','Noto Sans KR',system-ui,sans-serif;
   }
   *{box-sizing:border-box;}
-  body{margin:0;font-family:'Inter','Noto Sans KR',sans-serif;color:var(--ink);background:#fff;line-height:1.6;}
-  a{color:var(--accent);text-decoration:none;}
-  a:hover{text-decoration:underline;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:var(--sans);color:var(--ink2);background:var(--paper);
+       line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased;}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line2);
+    transition:border-color .2s,color .2s;}
+  a:hover{color:#000;border-color:var(--accent);}
+  .serif{font-family:var(--serif);}
+  .label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+         color:var(--muted);font-weight:600;}
 
-  /* top nav */
-  .nav{display:flex;align-items:center;justify-content:space-between;
-       max-width:1080px;margin:0 auto;padding:18px 24px;}
-  .nav .brand{font-weight:800;letter-spacing:.5px;color:var(--navy);font-size:18px;}
-  .nav .brand span{color:var(--accent);}
-  .nav .links a{color:var(--ink);margin-left:24px;font-size:14px;font-weight:500;}
-
-  /* dark banner */
-  .banner{background:var(--navy);color:#fff;}
-  .banner .inner{max-width:1080px;margin:0 auto;padding:26px 24px;}
-  .banner h1{margin:0;font-size:26px;font-weight:600;letter-spacing:.5px;}
+  /* top bar */
+  .top{max-width:1060px;margin:0 auto;padding:22px 28px;display:flex;
+       align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);}
+  .top .mark{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--ink);
+       letter-spacing:.01em;border:0;}
+  .top nav a{font-size:13px;color:var(--ink2);margin-left:26px;border:0;letter-spacing:.02em;}
+  .top nav a:hover{color:#000;}
 
   /* layout */
-  .wrap{max-width:1080px;margin:0 auto;padding:34px 24px 60px;
-        display:grid;grid-template-columns:260px 1fr;gap:38px;}
-  @media(max-width:820px){.wrap{grid-template-columns:1fr;}}
+  .wrap{max-width:1060px;margin:0 auto;padding:54px 28px 72px;
+        display:grid;grid-template-columns:248px 1fr;gap:56px;}
+  @media(max-width:840px){.wrap{grid-template-columns:1fr;gap:40px;padding-top:40px;}}
 
-  /* sidebar */
-  .side .photo{width:160px;height:190px;object-fit:cover;border-radius:6px;
-       border:1px solid var(--line);display:block;margin:0 auto 14px;}
-  .side .name{text-align:center;font-size:22px;font-weight:700;color:var(--navy);}
-  .side .name-en{text-align:center;color:var(--muted);font-size:14px;margin-top:2px;}
-  .side .role{text-align:center;font-size:13px;color:var(--ink);margin-top:10px;
-       padding-top:12px;border-top:1px solid var(--line);}
-  .side .icons{text-align:center;margin:12px 0;}
-  .side .icons a{display:inline-flex;width:30px;height:30px;border-radius:50%;
-       background:var(--card);color:var(--muted);align-items:center;justify-content:center;
-       margin:0 3px;font-size:13px;}
-  .side .contact{font-size:13px;color:var(--ink);text-align:center;margin-bottom:18px;}
-  .side .contact i{color:var(--accent);margin-right:6px;}
+  /* ---------- sidebar ---------- */
+  .side .photo{width:100%;max-width:200px;aspect-ratio:4/5;object-fit:cover;
+       border-radius:3px;filter:grayscale(12%);display:block;}
+  .side .name{font-family:var(--serif);font-size:30px;font-weight:500;color:var(--ink);
+       line-height:1.12;margin:22px 0 2px;letter-spacing:-.01em;}
+  .side .name-kr{font-family:var(--serif);font-size:15px;color:var(--muted);font-weight:500;}
+  .side .role{font-size:13px;color:var(--ink2);margin-top:14px;line-height:1.5;}
+  .side .role b{color:var(--ink);font-weight:600;}
+  .side .links{margin:18px 0 4px;display:flex;gap:14px;}
+  .side .links a{color:var(--muted);font-size:15px;border:0;}
+  .side .links a:hover{color:var(--accent);}
 
-  .side .block{border-left:3px solid var(--navy);padding-left:12px;margin:22px 0;}
-  .side .block h3{margin:0 0 10px;font-size:15px;color:var(--navy);font-weight:700;}
-  .side .block h3 i{margin-right:7px;color:var(--accent);}
-  .side .item{font-size:12.5px;margin-bottom:12px;}
-  .side .item .yr{color:var(--muted);font-size:11.5px;}
-  .side .item .ti{font-weight:600;display:block;margin-top:1px;}
+  .side .block{margin-top:30px;}
+  .side .block .label{display:block;padding-bottom:9px;margin-bottom:13px;
+       border-bottom:1px solid var(--line);}
+  .side .item{margin-bottom:14px;font-size:13px;line-height:1.45;}
+  .side .item .ti{color:var(--ink);font-weight:600;display:block;}
+  .side .item .yr{color:var(--muted);font-size:11.5px;letter-spacing:.02em;}
 
-  /* main cards */
-  .cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:30px;}
-  @media(max-width:560px){.cards{grid-template-columns:1fr;}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
-  .card h2{margin:0 0 14px;font-size:15px;color:var(--navy);font-weight:700;
-       border-left:4px solid var(--accent);padding-left:9px;}
-  .chips .chip{display:inline-block;border:1px solid #d7dbe3;background:var(--chip);
-       border-radius:20px;padding:5px 12px;font-size:12.5px;margin:0 5px 8px 0;color:#3c4456;}
-  .cloud{line-height:2.1;}
-  .cloud span{margin:0 6px;color:var(--navy);}
-  .cloud .xl{font-size:24px;font-weight:800;color:var(--accent);}
-  .cloud .lg{font-size:19px;font-weight:700;}
-  .cloud .md{font-size:15px;font-weight:600;color:#46506a;}
-  .cloud .sm{font-size:12.5px;color:#8a93a6;}
+  /* ---------- main ---------- */
+  .intro{font-family:var(--serif);font-size:20px;line-height:1.55;color:var(--ink);
+       font-weight:400;margin:0 0 46px;max-width:42em;}
+  .intro em{font-style:italic;color:var(--accent);}
 
-  /* section list */
-  .sec{margin:30px 0;}
-  .sec-h{display:flex;align-items:center;gap:10px;margin-bottom:14px;
-       padding-bottom:10px;border-bottom:1px solid var(--line);}
-  .sec-h i{color:var(--navy);font-size:18px;}
-  .sec-h h2{margin:0;font-size:19px;color:var(--ink);font-weight:700;}
-  .sec-h .count{background:var(--navy);color:#fff;font-size:12px;font-weight:700;
-       width:24px;height:24px;border-radius:50%;display:inline-flex;
-       align-items:center;justify-content:center;}
-  .pub{display:flex;gap:8px;margin-bottom:16px;font-size:14px;}
-  .pub .dot{color:var(--accent);margin-top:7px;font-size:8px;}
-  .pub .t{font-weight:600;}
-  .pub .m{color:var(--muted);font-size:13px;}
-  .pub .tag{display:inline-block;font-size:11px;font-weight:600;border-radius:4px;
-       padding:1px 8px;margin-left:6px;vertical-align:middle;}
-  .tag-patent{background:#eceef2;color:#4a5468;}
-  .tag-poster{background:#eceef2;color:#4a5468;}
-  .tag-journal{background:#eceef2;color:#4a5468;}
+  /* cards row */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:54px;}
+  @media(max-width:600px){.cards{grid-template-columns:1fr;}}
+  .card .label{display:block;margin-bottom:14px;}
+  .chip{display:inline-block;border:1px solid var(--line2);border-radius:100px;
+       padding:5px 13px;font-size:12.5px;margin:0 6px 8px 0;color:var(--ink2);
+       background:#fff;transition:border-color .2s,color .2s;}
+  .chip:hover{border-color:var(--accent);color:var(--ink);}
+  .cloud{line-height:2.05;color:var(--ink2);}
+  .cloud span{margin-right:11px;white-space:nowrap;}
+  .cloud .xl{font-family:var(--serif);font-size:25px;font-weight:500;color:var(--ink);}
+  .cloud .lg{font-family:var(--serif);font-size:19px;color:var(--accent);}
+  .cloud .md{font-size:15px;color:var(--ink2);}
+  .cloud .sm{font-size:12.5px;color:var(--muted);}
 
-  .field{background:#eaf7f0;border-radius:12px;padding:20px 22px;margin-top:30px;}
-  .field h2{margin:0 0 14px;font-size:17px;color:#1f6b46;font-weight:700;}
-  .field .col{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-  @media(max-width:560px){.field .col{grid-template-columns:1fr;}}
-  .field .pill{background:var(--navy);color:#fff;text-align:center;border-radius:20px;
-       padding:7px 0;font-size:13px;font-weight:600;margin-bottom:8px;}
-  .field .tree{font-size:13px;color:#2a4a39;}
-  .field .tree .l2{padding-left:16px;}
-  .field .tree .l3{padding-left:32px;}
+  /* section */
+  .sec{margin:0 0 46px;}
+  .sec-h{display:flex;align-items:baseline;gap:16px;margin-bottom:22px;}
+  .sec-h h2{font-family:var(--serif);font-size:23px;font-weight:500;color:var(--ink);
+       margin:0;letter-spacing:-.01em;white-space:nowrap;}
+  .sec-h .rule{flex:1;height:1px;background:var(--line);}
+  .sec-h .count{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;
+       letter-spacing:.08em;}
 
-  footer{border-top:1px solid var(--line);color:var(--muted);font-size:12px;
-       text-align:center;padding:24px;}
+  .pub{margin-bottom:22px;}
+  .pub:last-child{margin-bottom:0;}
+  .pub .t{color:var(--ink);font-weight:600;font-size:14.5px;line-height:1.45;}
+  .pub .t a{border:0;}
+  .pub .t a:hover{color:var(--accent);}
+  .pub .m{color:var(--muted);font-size:13px;margin-top:3px;}
+  .pub .m u{text-decoration:none;color:var(--ink2);border-bottom:1px solid var(--line2);}
+  .tag{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+       font-weight:600;border:1px solid var(--line2);color:var(--muted);
+       border-radius:3px;padding:1px 7px;margin-left:9px;vertical-align:middle;}
+
+  /* research field */
+  .field{border:1px solid var(--line);border-radius:6px;padding:26px 28px;margin-top:8px;
+       background:linear-gradient(180deg,#f7f5f0,#fbfaf7);}
+  .field .label{display:block;margin-bottom:18px;}
+  .field .col{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+  @media(max-width:600px){.field .col{grid-template-columns:1fr;}}
+  .field h3{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--accent);
+       margin:0 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line);}
+  .field .tree{font-size:13px;color:var(--ink2);line-height:1.7;}
+  .field .tree .l2{padding-left:15px;color:var(--muted);}
+  .field .tree .l3{padding-left:30px;color:var(--muted);}
+
+  footer{border-top:1px solid var(--line);max-width:1060px;margin:0 auto;
+       padding:26px 28px 40px;color:var(--muted);font-size:12px;letter-spacing:.02em;}
 </style>
 </head>
 <body>
 
-<!-- top nav -->
-<div class="nav">
-  <div class="brand">HYEONNA<span>.</span>CHOI</div>
-  <div class="links">
+<!-- top bar -->
+<header class="top">
+  <a class="mark" href="#">Hyeonna&nbsp;Choi</a>
+  <nav>
     <a href="#publications">Publications</a>
     <a href="#projects">Projects</a>
     <a href="mailto:hynaaaai@gmail.com">Contact</a>
-  </div>
-</div>
-
-<!-- dark banner -->
-<div class="banner"><div class="inner"><h1>Researcher Profile</h1></div></div>
+  </nav>
+</header>
 
 <div class="wrap">
 
   <!-- ============ SIDEBAR ============ -->
   <aside class="side">
     <img class="photo" src="assets/profile.jpg"
-         onerror="this.src='https://dummyimage.com/160x190/eef0f3/b8bfca&text=photo';">
-    <div class="name">최현나</div>
-    <div class="name-en">Hyeonna Choi</div>
-    <div class="role">Multimodal Intelligence &amp; Perception Lab<br>
-      <b>M.S. Student</b>, EECS · DGIST</div>
-    <div class="icons">
+         onerror="this.src='https://dummyimage.com/200x250/efece4/c3bfb2&text=%20';">
+    <div class="name">Hyeonna<br>Choi</div>
+    <div class="name-kr">최현나</div>
+    <div class="role"><b>M.S. Student</b>, EECS · DGIST<br>
+      Multimodal Intelligence &amp; Perception Lab</div>
+    <div class="links">
       <a href="mailto:hynaaaai@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
       <a href="https://github.com/hyeonna-choi" title="GitHub"><i class="fab fa-github"></i></a>
       <a href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
     </div>
-    <div class="contact"><i class="fas fa-envelope"></i>hynaaaai@gmail.com</div>
 
     <div class="block">
-      <h3><i class="fas fa-graduation-cap"></i>Education</h3>
-      <div class="item"><span class="yr">2026 – present</span>
-        <span class="ti">DGIST, M.S. in EECS</span></div>
-      <div class="item"><span class="yr">2022 – 2026</span>
-        <span class="ti">Jeju Nat’l Univ., B.S. in Software (AI)</span>
-        <span class="yr">GPA 4.09 / 4.5</span></div>
+      <span class="label">Education</span>
+      <div class="item"><span class="ti">DGIST</span>
+        <span>M.S. in EECS</span><br><span class="yr">2026 — present</span></div>
+      <div class="item"><span class="ti">Jeju National University</span>
+        <span>B.S. in Software (AI), GPA 4.09/4.5</span><br><span class="yr">2022 — 2026</span></div>
     </div>
 
     <div class="block">
-      <h3><i class="fas fa-briefcase"></i>Experience</h3>
-      <div class="item"><span class="yr">2025 – present</span>
-        <span class="ti">KIMM, AI Robot Research Institute</span>
-        <span class="yr">Student Researcher · Bio-Mechanical Div.</span></div>
-      <div class="item"><span class="yr">2023 – 2025</span>
-        <span class="ti">XAI Lab, Jeju Nat’l Univ.</span>
-        <span class="yr">Undergraduate Researcher</span></div>
+      <span class="label">Experience</span>
+      <div class="item"><span class="ti">KIMM · AI Robot Research Inst.</span>
+        <span>Student Researcher, Bio-Mechanical Div.</span><br><span class="yr">2025 — present</span></div>
+      <div class="item"><span class="ti">XAI Lab · Jeju Nat’l Univ.</span>
+        <span>Undergraduate Researcher</span><br><span class="yr">2023 — 2025</span></div>
     </div>
 
     <div class="block">
-      <h3><i class="fas fa-award"></i>Awards</h3>
+      <span class="label">Awards</span>
       <div class="item"><span class="ti">Grand Prize</span>
         <span class="yr">Learning Community Program, JNU · 2025</span></div>
       <div class="item"><span class="ti">Global Talent Award</span>
@@ -169,10 +176,16 @@
 
   <!-- ============ MAIN ============ -->
   <main>
-    <!-- two cards -->
+    <p class="intro">
+      I build <em>learning-based visual perception</em> for systems that act in the
+      physical world — state estimation under transparency, spatiotemporal understanding
+      of video, and language-driven automation for autonomous laboratories.
+    </p>
+
+    <!-- interests + keywords -->
     <div class="cards">
-      <div class="card chips">
-        <h2>Research Interests</h2>
+      <div class="card">
+        <span class="label">Research Interests</span>
         <span class="chip">Computer Vision</span>
         <span class="chip">Physical AI</span>
         <span class="chip">Visual Perception</span>
@@ -180,10 +193,9 @@
         <span class="chip">Multi-View RGB-D</span>
         <span class="chip">Synthetic Data</span>
         <span class="chip">3D Reconstruction</span>
-        <span class="chip">Autonomous Lab</span>
       </div>
       <div class="card">
-        <h2>Related Keywords</h2>
+        <span class="label">Keywords</span>
         <div class="cloud">
           <span class="xl">ViT</span>
           <span class="md">transparent objects</span>
@@ -193,76 +205,74 @@
           <span class="md">LangChain</span>
           <span class="sm">Blender</span>
           <span class="md">surgical video</span>
-          <span class="sm">SfM</span>
-          <span class="sm">MASt3R</span>
+          <span class="sm">SfM · MASt3R</span>
           <span class="md">fill-level</span>
-          <span class="sm">temporal modeling</span>
         </div>
       </div>
     </div>
 
     <!-- publications -->
-    <div class="sec" id="publications">
-      <div class="sec-h"><i class="fas fa-book-open"></i><h2>Publications</h2><span class="count">1</span></div>
-      <div class="pub"><span class="dot"><i class="fas fa-circle"></i></span><div>
-        <span class="t">Automated Preprocessing and Tool Combination Modeling for Surgical Phase Recognition</span>
-        <span class="tag tag-journal">Journal</span><br>
-        <span class="m"><u>Hyeonna Choi</u>, Ahyeon Jo, Jisoo Kim · <i>In preparation</i>, 2026</span>
-      </div></div>
-    </div>
+    <section class="sec" id="publications">
+      <div class="sec-h"><h2 class="serif">Publications</h2><span class="rule"></span><span class="count">01</span></div>
+      <div class="pub">
+        <div class="t">Automated Preprocessing and Tool Combination Modeling for Surgical Phase Recognition
+          <span class="tag">Journal</span></div>
+        <div class="m"><u>Hyeonna Choi</u>, Ahyeon Jo, Jisoo Kim · <i>In preparation</i>, 2026</div>
+      </div>
+    </section>
 
     <!-- conferences -->
-    <div class="sec">
-      <div class="sec-h"><i class="fas fa-chalkboard-user"></i><h2>Conference Presentations</h2><span class="count">2</span></div>
-      <div class="pub"><span class="dot"><i class="fas fa-circle"></i></span><div>
-        <span class="t">A Transformer-Based System for Predicting Surgical Tool Usage Transitions</span>
-        <span class="tag tag-poster">Poster</span><br>
-        <span class="m"><u>Hyeonna Choi</u>, Ahyeon Jo, Jisoo Kim · KSCDE Summer Conference, Yeosu · 2025</span>
-      </div></div>
-      <div class="pub"><span class="dot"><i class="fas fa-circle"></i></span><div>
-        <span class="t">An Automated 3D&nbsp;CNN-Based System for Surgical Tool Change Prediction</span>
-        <span class="tag tag-poster">Poster</span><br>
-        <span class="m"><u>Hyeonna Choi</u>, Ahyeon Jo, Jisoo Kim · KSPE Spring Conference, Jeju · 2025</span>
-      </div></div>
-    </div>
+    <section class="sec">
+      <div class="sec-h"><h2 class="serif">Conference Presentations</h2><span class="rule"></span><span class="count">02</span></div>
+      <div class="pub">
+        <div class="t">A Transformer-Based System for Predicting Surgical Tool Usage Transitions
+          <span class="tag">Poster</span></div>
+        <div class="m"><u>Hyeonna Choi</u>, Ahyeon Jo, Jisoo Kim · KSCDE Summer Conference, Yeosu · 2025</div>
+      </div>
+      <div class="pub">
+        <div class="t">An Automated 3D&nbsp;CNN-Based System for Surgical Tool Change Prediction
+          <span class="tag">Poster</span></div>
+        <div class="m"><u>Hyeonna Choi</u>, Ahyeon Jo, Jisoo Kim · KSPE Spring Conference, Jeju · 2025</div>
+      </div>
+    </section>
 
     <!-- patents -->
-    <div class="sec">
-      <div class="sec-h"><i class="fas fa-file-contract"></i><h2>Patents</h2><span class="count">1</span></div>
-      <div class="pub"><span class="dot"><i class="fas fa-circle"></i></span><div>
-        <span class="t">LangChain-Based Structuring and Automated Sequence Generation of Biological Experiment Protocols</span>
-        <span class="tag tag-patent">Patent</span><br>
-        <span class="m"><u>Hyeonna Choi</u>, Seungyu Jeon, Hyunwoo Lim, Jisoo Kim · Filed, 2025</span>
-      </div></div>
-    </div>
+    <section class="sec">
+      <div class="sec-h"><h2 class="serif">Patents</h2><span class="rule"></span><span class="count">01</span></div>
+      <div class="pub">
+        <div class="t">LangChain-Based Structuring and Automated Sequence Generation of Biological Experiment Protocols
+          <span class="tag">Patent</span></div>
+        <div class="m"><u>Hyeonna Choi</u>, Seungyu Jeon, Hyunwoo Lim, Jisoo Kim · Filed, 2025</div>
+      </div>
+    </section>
 
     <!-- projects -->
-    <div class="sec" id="projects">
-      <div class="sec-h"><i class="fas fa-cube"></i><h2>Projects</h2><span class="count">2</span></div>
-      <div class="pub"><span class="dot"><i class="fas fa-circle"></i></span><div>
-        <span class="t"><a href="https://hyeonna-choi.github.io/liquid-fill-level-estimation/">Liquid Fill-Level Estimation for Dual-Transparent Labware</a></span><br>
-        <span class="m">ViT on multi-view RGB-D, trained on a fully synthetic Blender pipeline ·
-          <a href="https://github.com/hyeonna-choi/liquid-fill-level-estimation">code</a></span>
-      </div></div>
-      <div class="pub"><span class="dot"><i class="fas fa-circle"></i></span><div>
-        <span class="t">Depth-Supervised 3D Reconstruction</span><br>
-        <span class="m">Monocular depth as auxiliary supervision, compared against SfM / MASt3R</span>
-      </div></div>
-    </div>
+    <section class="sec" id="projects">
+      <div class="sec-h"><h2 class="serif">Projects</h2><span class="rule"></span><span class="count">02</span></div>
+      <div class="pub">
+        <div class="t"><a href="https://hyeonna-choi.github.io/liquid-fill-level-estimation/">Liquid Fill-Level Estimation for Dual-Transparent Labware</a></div>
+        <div class="m">ViT on multi-view RGB-D, trained on a fully synthetic Blender pipeline ·
+          <a href="https://github.com/hyeonna-choi/liquid-fill-level-estimation">code</a></div>
+      </div>
+      <div class="pub">
+        <div class="t">Depth-Supervised 3D Reconstruction</div>
+        <div class="m">Monocular depth as auxiliary supervision, compared against SfM / MASt3R</div>
+      </div>
+    </section>
 
     <!-- research field -->
     <div class="field">
-      <h2>Research Field</h2>
+      <span class="label">Research Field</span>
       <div class="col">
         <div>
-          <div class="pill">National S&amp;T Standard Classification</div>
-          <div class="tree">EE. Information / Communication<br>
+          <h3 class="serif">National S&amp;T Standard Classification</h3>
+          <div class="tree">EE. Information / Communication
             <div class="l2">↳ Artificial Intelligence</div>
             <div class="l3">↳ Computer Vision</div></div>
         </div>
         <div>
-          <div class="pill">Strategic Technology Area</div>
-          <div class="tree">Advanced Robotics / Manufacturing<br>
+          <h3 class="serif">Strategic Technology Area</h3>
+          <div class="tree">Advanced Robotics / Manufacturing
             <div class="l2">↳ Physical AI · Autonomous Systems</div></div>
         </div>
       </div>
@@ -270,6 +280,6 @@
   </main>
 </div>
 
-<footer>© 2026 Hyeonna Choi · DGIST, Daegu · KIMM, Daejeon, South Korea · hynaaaai@gmail.com</footer>
+<footer>© 2026 Hyeonna Choi&nbsp;&nbsp;·&nbsp;&nbsp;DGIST, Daegu&nbsp;&nbsp;·&nbsp;&nbsp;KIMM, Daejeon&nbsp;&nbsp;·&nbsp;&nbsp;hynaaaai@gmail.com</footer>
 </body>
 </html>
